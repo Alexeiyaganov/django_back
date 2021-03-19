@@ -1,0 +1,30 @@
+{% extends 'main/layout.html'%}
+{%load static%}
+
+{%block title%}{{title}}{%endblock%}
+
+{%block content%}
+    <div class="features">
+        <h1>{{title}}</h1>
+        <img src="{%static 'main/python/sleep.png'%}" alt="Сон вне активности">
+        <img src="{%static 'main/python/sig.png'%}" alt="Сон вне активности">
+        <img src="{%static 'main/python/pro.png'%}" alt="Сон вне активности">
+        <img src="{%static 'main/python/sre.png'%}" alt="Сон вне активности">
+        <img src="{%static 'main/python/din.png'%}" alt="Сон вне активности">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci autem eius facilis fuga impedit iusto laudantium, omnis sapiente vel voluptates.</p>
+        <button class="btn btn-warning">На страницу про нас</button>
+
+        {% for el in values%}
+            {% if el == 'Hello'%}
+                {% filter upper%}
+                    <p>{{el|upper}}</p>
+                {% endfilter%}
+            {% endif %}
+        {% endfor %}
+        {{obj.age}}
+
+
+
+    </div>
+
+{%endblock%}

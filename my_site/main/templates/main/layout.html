@@ -1,0 +1,35 @@
+{%load static%}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title%} {% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="{%static 'main/css/main.css'%}">
+</head>
+<body>
+    <aside>
+        <img src="{%static 'main/img/image.png'%}" alt="Лого">
+        <span class="logo">Logo</span>
+        <h3>Навигация</h3>
+        <ul>
+            <a href="{% url 'home' %}"><li><i class="fas fa-home"></i> Главная</li></a>
+            <a href="{% url 'about' %}"><li><i class="far fa-address-card"></i> Про нас</li></a>
+            <a href="{% url 'news_home' %}"><li><i class="fas fa-address-book"></i> Новости</li></a>
+            <a href=""><li><i class="fas fa-address-book"></i> Контакты</li></a>
+            <a href="{% url 'create' %}"><li><button class="btn btn-info"><i class="fas fa-plus-circle"></i>Добавить запись</button></li></a>
+        </ul>
+    </aside>
+    <main>
+
+    {% block content%}
+        <img src="{%static 'main/img/image.png'%}" alt="Лого">
+
+    {% endblock %}
+    </main>
+</body>
+</html>
